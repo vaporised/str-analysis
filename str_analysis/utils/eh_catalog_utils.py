@@ -12,9 +12,10 @@ def convert_json_records_to_bed_format_tuples(json_records):
     """Takes an iterator over json records in ExpansionHunter format, and coverts them to BED format tuples
 
     Yield:
-        5-tuples: (chrom, start_0based, end_1based, motif, repeat_count)
+        6-tuples: (chrom, start_0based, end_1based, motif, repeat_count, locus_id)
     """
     for record in json_records:
+	locus_id = record["LocusID"]
         locus_structure = record["LocusStructure"]
         reference_regions = record["ReferenceRegion"]
         if not isinstance(reference_regions, list):
@@ -27,4 +28,4 @@ def convert_json_records_to_bed_format_tuples(json_records):
 
         for reference_region, motif in zip(reference_regions, motifs):
             chrom, start_0based, end_1based = parse_interval(reference_region)
-            yield chrom, start_0based, end_1based, motif, f"{(end_1based - start_0based) / len(motif):0.1f}"
+            yield chrom, start_0based, end_1based, motif, f"{(end_1based - start_0based) / len(motif):0.1f}", locus_id
