@@ -8,12 +8,6 @@ To install the latest version using pip, run:
 python3 -m pip install --upgrade git+https://github.com/vaporised/str-analysis.git
 ```
 
-or use the docker image (though it may not have the latest version of the code):
-
-```
-docker run -it weisburd/str-analysis:latest
-```
-
 ## Tools
 
   * **call_non_ref_motifs** ([docs](https://github.com/broadinstitute/str-analysis/blob/main/docs/call_non_ref_motifs.md)) - takes a bam/cram file and, optionally, an ExpansionHunter variant catalog. Then, for each 
