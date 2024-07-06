@@ -15,7 +15,7 @@ def convert_json_records_to_bed_format_tuples(json_records):
         6-tuples: (chrom, start_0based, end_1based, motif, repeat_count, locus_id)
     """
     for record in json_records:
-        locus_id = record["LocusID"]
+        locus_id = record["LocusId"]
         locus_structure = record["LocusStructure"]
         reference_regions = record["ReferenceRegion"]
         if not isinstance(reference_regions, list):
