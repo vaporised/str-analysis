@@ -457,7 +457,9 @@ def main():
 
     # parse each catalog and add each new unique record to this IntervalTrees dictionary
     interval_trees = collections.defaultdict(intervaltree.IntervalTree)
+    print(paths)
     for i, (path, file_type) in enumerate(paths):
+        print(path)
         add_variant_catalog_to_interval_trees(
             interval_trees, path, file_type,
             min_overlap_fraction=args.overlap_fraction,
