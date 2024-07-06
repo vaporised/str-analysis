@@ -1,4 +1,5 @@
 This repo contains scripts and utilities for analyzing tandem repeats (TRs). 
+
 This fork adds locus IDs as another field in output BED files from **merge_loci**
 
 ## Installation
